@@ -1,0 +1,15 @@
+{% if user %}
+Welcome {{ user }}
+<a href="/logout">Logout</a>
+
+{% else %}
+<form method="post">
+  Email: <input name="email" placeholder="email" value="john@wick.com">
+  Password: <input name="password" type="password" value="password">
+  <button type="submit">Login</button>
+</form>
+{% endif %}
+
+{% if error %}
+{{ error }}
+{% endif %}

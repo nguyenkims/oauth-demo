@@ -1,0 +1,19 @@
+<b>{{ client.name }}</b> would like to use your data.
+<br>
+
+{% if user %}
+Hi <b>{{ user.name }}</b>
+<br>
+<form method="post" action="/oauth/allow">
+  <input type="hidden" name="client-id" value="{{client.id}}">
+  <input type="hidden" name="state" value="{{state}}">
+  <button type="submit">Allow</button>
+</form>
+
+
+{% else %}
+You are not logged in, you need to login first.
+<br>
+<a href="/">Login</a>
+{% endif %}
+
